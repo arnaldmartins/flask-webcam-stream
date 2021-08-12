@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Video CAM teste</title>
+    <title>Video CAM</title>
     <style>
       body {
         background: #61bd8c;
@@ -27,14 +27,24 @@
         background-color:white;    
       }
     </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+              $('#btnOpen').on('click', function(e) {
+                e.preventDefault()
+                $.post('/open_door');
+                return false;
+              });
+            });
+    </script>
   </head>
   <body>    
     <div class="conteudo">  
       <h1>VIDEO CAM</h1>   
       <img src="{{ url_for('video_feed') }}">
-      <h2>off-line!</h2> 
+      <h2>Camera off-line!</h2> 
       <br><br>
-      <button >ABRIR</button>
+      <button id="btnOpen">ABRIR</button>
     </div>
   </body>
 </html>

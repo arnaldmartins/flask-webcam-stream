@@ -1,7 +1,7 @@
 # install opencv (OrangePi)
 pip install python3-opencv
 
-# install open cv (Windows)
+# install opencv (Windows)
 pip install opencv-python
 
 # instal Flask

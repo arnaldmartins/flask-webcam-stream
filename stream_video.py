@@ -22,9 +22,16 @@ def video_feed():
     return Response(gen(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route('/open_door', methods=['POST'])
+def open_door():
+    """Enviar comando para abrir o portão"""
+    print("aqui o camando de abrir portão")
+    return ("nothing")
+
 def gen():
     """Video streaming generator function."""
-    cap = cv2.VideoCapture(0)
+    # mudar para 1 quando no OrangePi
+    cap = cv2.VideoCapture(0) 
 
     # Read until video is completed
     while(cap.isOpened()):
